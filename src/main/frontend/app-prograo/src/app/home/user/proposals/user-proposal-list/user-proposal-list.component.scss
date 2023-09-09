@@ -1,0 +1,90 @@
+@import '../../../../../sass/mixins';
+@import '../../../../../sass/variables';
+
+.user-proposal-wrapper {
+
+  .user-proposal-list {
+
+    .user-proposal-list-header {
+
+      cursor: pointer;
+
+      h3 {
+        font-weight: lighter;
+        font-family: $font-family-title;
+      }
+    }
+
+    .proposal-box {
+      padding: 5px;
+      margin-bottom: 15px;
+      border: 1px solid white;
+      border-left: 3px solid $primary;
+      transition: 0.2s;
+      cursor: pointer;
+      background-color: white;
+
+      @include phone() {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      &:hover {
+        border: 1px solid $primary;
+        border-left: 3px solid $primary;
+      }
+
+      .optionsStatus {
+
+        @include phone() {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: flex-end;
+        }
+
+      }
+
+      .date {
+        margin-right: 15px;
+      }
+
+      button {
+        color: white;
+        padding: 6px 8px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      button + button {
+        margin-left: 15px;
+      }
+
+      .green {
+        background-color: #559E55;
+      }
+
+      .yellow {
+        background-color: #C7C64B;
+      }
+
+      .red {
+        background-color: #EE5C59;
+      }
+
+      .green-font {
+        color: #559E55;
+        font-weight: bold;
+      }
+
+      .red-font {
+        color: #EE5C59;
+        font-weight: bold;
+      }
+
+    }
+  }
+}

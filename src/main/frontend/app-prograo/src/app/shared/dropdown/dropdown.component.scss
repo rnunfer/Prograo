@@ -1,0 +1,53 @@
+@import '../../../sass/mixins';
+@import '../../../sass/variables';
+
+.dropdown-body {
+  margin-bottom: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+  .dropdown-header {
+    user-select: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding-bottom: 10px;
+    transition: 0.2s;
+    padding: 8px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid transparent;
+
+    &:hover {
+      border: 2px solid $primary;
+    }
+
+    h3 {
+      font-weight: lighter;
+      font-family: $font-family-title;
+      transition: 0.2s;
+    }
+
+    i {
+      color: $primary;
+      font-size: 20px;
+      transition: transform 0.1s linear;
+      margin-right: 10px;
+    }
+
+    .rotate {
+      transform: rotate(180deg);
+      transition: transform 0.1s linear;
+    }
+  }
+
+  .dropdown-main {
+    padding: 15px 0px 5px 0px;
+
+    .content {
+      margin: 0px 15px;
+    }
+  }
+}

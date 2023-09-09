@@ -1,0 +1,33 @@
+<div class="freelancer-box" [routerLink]="['/freelancer-list', freelancer.freelancerId]">
+    <section class="superior-zone">
+        <div *ngIf="freelancer.userProfilePhoto === null;then undefined_photo else defined_photo"></div>
+        <ng-template #undefined_photo>
+          <img class="profile-photo" [src]="'assets/' + freelancer.userProfilePhoto ">
+        </ng-template>
+        <ng-template #defined_photo>
+          <img class="profile-photo" [src]="'assets/' + freelancer.userProfilePhoto ">
+        </ng-template>
+        <section>
+          <div class="name">
+              <h2>{{freelancer.userName}}</h2>
+              <i class="fa-regular fa-heart"></i>
+          </div>
+          <em>{{freelancer.userTitle}}</em>
+          <div class="puntuation">
+              <app-stars-calification [calification]="freelancer.totalCalification" [starSize]="15" [text]="true" [numCalification]="freelancer.numberCalification"></app-stars-calification>
+          </div>
+          <div class="location">
+              <i class="fa-solid fa-location-dot"></i>
+              <p>{{freelancer.city}}, {{freelancer.country}}</p>
+          </div>
+          <div class="price">
+              <p>{{freelancer.freelancerRate}} €/hora</p>
+          </div>
+        </section>
+    </section>
+    <section class="inferior-zone">
+        <ul>
+            <li *ngFor="let skill of skillList">{{skill}}</li>
+        </ul>
+    </section>
+</div>

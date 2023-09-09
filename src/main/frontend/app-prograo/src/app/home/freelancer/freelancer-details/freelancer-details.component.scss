@@ -1,0 +1,44 @@
+@import '../../../../sass/mixins';
+@import '../../../../sass/variables';
+
+.container {
+
+    padding-top: 20px;
+
+    @include desktop() {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        align-items: flex-start;
+    }
+
+    .freelancer-detail {
+
+        grid-column-start: 1;
+        grid-column-end: 5;
+        margin-bottom: 20px;
+
+        @include desktop() {
+            margin-right: 10px;
+        }
+    }
+
+    .freelancers-list {
+
+        display: grid;
+        grid-gap: 10px;
+
+        @include tablet() {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @include desktop() {
+            grid-column-start: 5;
+            grid-column-end: 7;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-gap: 10px;
+        }
+
+    }
+
+}

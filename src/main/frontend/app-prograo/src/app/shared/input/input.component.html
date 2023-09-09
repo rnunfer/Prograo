@@ -1,0 +1,37 @@
+<div (focusout)="emit()" *ngIf="conf.activateFormControl; then withFormControl; else withoutFormControl"></div>
+<ng-template #withFormControl>
+  <section class="wrapper" [ngClass]="{'error': conf.formControl.touched && conf.formControl.invalid, 'valid': conf.formControl.valid}">
+    <i class="fa-solid fa-triangle-exclamation" *ngIf="conf.formControl.invalid && conf.formControl.touched" [ngStyle]="{'font-size.px': conf.fontSize+2}" @fadeIn @fadeOut>
+      <ul *ngIf="conf.formControl.touched && conf.formControl.invalid">
+        <li *ngIf="conf.formControl.hasError('required')" [ngStyle]="{'font-size.px': conf.fontSize-5}">Este campo es obligatorio</li>
+        <li *ngIf="conf.formControl.hasError('pattern')" [ngStyle]="{'font-size.px': conf.fontSize-5}">No se cumplen los patrones del campo</li>
+        <li *ngIf="conf.formControl.hasError('maxlength')" [ngStyle]="{'font-size.px': conf.fontSize-5}">Número máximo de caracteres: {{ conf.formControl.errors?.maxlength.requiredLength }}</li>
+        <li *ngIf="conf.formControl.hasError('max')" [ngStyle]="{'font-size.px': conf.fontSize-5}">Número máximo: {{ conf.formControl.errors?.max.max }}</li>
+        <li *ngIf="conf.formControl.hasError('min')" [ngStyle]="{'font-size.px': conf.fontSize-5}">Número mínimo: {{ conf.formControl.errors?.min.min }}</li>
+        <li *ngIf="conf.formControl.hasError('email')" [ngStyle]="{'font-size.px': conf.fontSize-5}">Formato de email no correcto</li>
+      </ul>
+    </i>
+
+    <ng-container [ngSwitch]="conf.type">
+      <input (focusout)="emit()" *ngSwitchCase="'text'" type="text" [formControl]="conf.formControl" [placeholder]="conf.placeholder" [ngStyle]="{'font-size.px': conf.fontSize}">
+      <input (focusout)="emit()" *ngSwitchCase="'password'" type="password" [formControl]="conf.formControl" [placeholder]="conf.placeholder" [ngStyle]="{'font-size.px': conf.fontSize}">
+      <input (focusout)="emit()" *ngSwitchCase="'number'" type="number" [formControl]="conf.formControl" [placeholder]="conf.placeholder" [ngStyle]="{'font-size.px': conf.fontSize}">
+      <input (focusout)="emit()" *ngSwitchCase="'date'" type="date" [formControl]="conf.formControl" [placeholder]="conf.placeholder" [ngStyle]="{'font-size.px': conf.fontSize}" [value]="formatDate(conf.formControl.value)">
+      <textarea (focusout)="emit()" *ngSwitchCase="'textarea'" [rows]="conf.rowsNumberTextarea" [formControl]="conf.formControl" [placeholder]="conf.placeholder" [ngStyle]="{'font-size.px': conf.fontSize}"></textarea>
+    </ng-container>
+  </section>
+</ng-template>
+<ng-template #withoutFormControl>
+  <section class="wrapper">
+    <ng-container [ngSwitch]="conf.type">
+      <input (focusout)="emit()" *ngSwitchCase="'text'" type="text" [formControl]="conf.formControl" [placeholder]="conf.placeholder" [ngStyle]="{'font-size.px': conf.fontSize}">
+      <input (focusout)="emit()" *ngSwitchCase="'password'" type="password" [formControl]="conf.formControl" [placeholder]="conf.placeholder" [ngStyle]="{'font-size.px': conf.fontSize}">
+      <input (focusout)="emit()" *ngSwitchCase="'number'" type="number" [formControl]="conf.formControl" [placeholder]="conf.placeholder" [ngStyle]="{'font-size.px': conf.fontSize}">
+      <input (focusout)="emit()" *ngSwitchCase="'date'" type="date" [formControl]="conf.formControl" [placeholder]="conf.placeholder" [ngStyle]="{'font-size.px': conf.fontSize}" [value]="formatDate(conf.formControl.value)">
+      <textarea (focusout)="emit()" *ngSwitchCase="'textarea'" [rows]="conf.rowsNumberTextarea" [formControl]="conf.formControl" [placeholder]="conf.placeholder" [ngStyle]="{'font-size.px': conf.fontSize}"></textarea>
+    </ng-container>
+  </section>
+</ng-template>
+
+
+

@@ -1,0 +1,89 @@
+@charset "UTF-8";
+/* COLORES */
+/* TAMAÑOS */
+/* FUENTES */
+.user-proposal-wrapper .user-proposal-list .user-proposal-list-header {
+  cursor: pointer;
+}
+.user-proposal-wrapper .user-proposal-list .user-proposal-list-header h3 {
+  font-weight: lighter;
+  font-family: "Merriweather";
+}
+.user-proposal-wrapper .user-proposal-list .proposal-box {
+  padding: 5px;
+  margin-bottom: 15px;
+  border: 1px solid white;
+  border-left: 3px solid #FF7F40;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  cursor: pointer;
+  background-color: white;
+}
+@media only screen and (min-width: 480px) {
+  .user-proposal-wrapper .user-proposal-list .proposal-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+.user-proposal-wrapper .user-proposal-list .proposal-box:hover {
+  border: 1px solid #FF7F40;
+  border-left: 3px solid #FF7F40;
+}
+@media only screen and (min-width: 480px) {
+  .user-proposal-wrapper .user-proposal-list .proposal-box .optionsStatus {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+}
+.user-proposal-wrapper .user-proposal-list .proposal-box .date {
+  margin-right: 15px;
+}
+.user-proposal-wrapper .user-proposal-list .proposal-box button {
+  color: white;
+  padding: 6px 8px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.user-proposal-wrapper .user-proposal-list .proposal-box button + button {
+  margin-left: 15px;
+}
+.user-proposal-wrapper .user-proposal-list .proposal-box .green {
+  background-color: #559E55;
+}
+.user-proposal-wrapper .user-proposal-list .proposal-box .yellow {
+  background-color: #C7C64B;
+}
+.user-proposal-wrapper .user-proposal-list .proposal-box .red {
+  background-color: #EE5C59;
+}
+.user-proposal-wrapper .user-proposal-list .proposal-box .green-font {
+  color: #559E55;
+  font-weight: bold;
+}
+.user-proposal-wrapper .user-proposal-list .proposal-box .red-font {
+  color: #EE5C59;
+  font-weight: bold;
+}/*# sourceMappingURL=user-project-list.component.css.map */

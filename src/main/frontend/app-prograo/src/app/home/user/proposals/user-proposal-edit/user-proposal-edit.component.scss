@@ -1,0 +1,51 @@
+@import '../../../../../sass/mixins';
+@import '../../../../../sass/variables';
+
+.seeker-information {
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  border-bottom: 2px solid lightgray;
+  padding-bottom: 10px;
+
+  .profile-photo {
+    width: 70px;
+    border-radius: 100%;
+    margin-right: 10px;
+  }
+
+  .seeker-info {
+
+    p {
+      font-size: 14px;
+    }
+  }
+}
+
+.proposal-info {
+
+  border-bottom: 2px solid lightgray;
+  padding-bottom: 10px;
+
+  h3 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-family: $font-family-title;
+  }
+
+  .date {
+    font-size: 14px;
+    color: rgb(88, 88, 88)
+  }
+}
+
+.proposal-footer {
+  margin-top: 10px;
+}
+
+b {
+  margin: 10px 0px;
+}
+

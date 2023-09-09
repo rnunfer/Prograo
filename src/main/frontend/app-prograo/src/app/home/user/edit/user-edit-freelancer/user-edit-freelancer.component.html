@@ -1,0 +1,37 @@
+<form class="form-wrapper" [formGroup]="formFreelancer">
+    <section class="form-title">
+        <h2>Datos de freelancer</h2>
+    </section>
+    
+    <div class="formulary-element">
+        <label for="rate">Precio:</label>
+        <shared-input [conf]="confRate" (dataEmit)="changeField('rate')"></shared-input>
+    </div>
+
+    <div class="formulary-element">
+        <label for="description">Descripción:</label>
+        <shared-input [conf]="confDescription" (dataEmit)="changeField('description')"></shared-input>
+    </div>
+
+    <div class="formulary-element">
+        <label for="description">Twitter:</label>
+        <shared-input [conf]="confTwitter" (dataEmit)="changeField('twitter')"></shared-input>
+    </div>
+
+    <div class="formulary-element">
+        <label for="description">Facebook:</label>
+        <shared-input [conf]="confFacebook" (dataEmit)="changeField('facebook')"></shared-input>
+    </div>
+
+    <div class="formulary-element">
+        <label for="description">Linkedin:</label>
+        <shared-input [conf]="confLinkedin" (dataEmit)="changeField('linkedin')"></shared-input>
+    </div>
+
+    <div class="formulary-element">
+        <label for="description">Email:</label>
+        <shared-input [conf]="confEmail" (dataEmit)="changeField('email')"></shared-input>
+    </div>
+
+
+</form>

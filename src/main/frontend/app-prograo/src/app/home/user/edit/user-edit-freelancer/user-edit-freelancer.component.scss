@@ -1,0 +1,190 @@
+@import '../../../../../sass/mixins';
+@import '../../../../../sass/variables';
+
+.form-wrapper {
+    background-color: white;
+    border-radius: 10px;
+    padding: 5px;
+    margin-top: 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+    .form-title {
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        border-bottom: 2px solid lightgrey;
+        padding-bottom: 10px;
+
+        h2 {
+            font-family: $font-family-title;
+            
+        }
+
+        input[type=button] {
+            @include button('secundary');
+        }
+    }
+    
+    .formulary-element {
+
+        display: flex;
+        flex-direction: column;
+        margin-top: 15px;
+
+        div {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            .profile-photo {
+                width: 250px;
+                border-radius: 100%;
+                margin-top: 5px;
+            }
+
+            input[type=file] {
+                margin-left: 15px;
+            }
+
+        }
+
+        label {
+            font-size: 20px;
+            font-family: $font-family-title;
+        }
+
+        input[type=text] {
+            width: 50%;
+            border-radius: 10px;
+            padding: 10px 5px;
+        }
+
+        textarea {
+            border-radius: 10px;
+            padding: 10px 5px;
+            resize: none;
+            border: 1px solid black;
+        }
+
+        ul {
+
+            margin-left: 50px;
+
+            li {
+                color: red;
+                font-size: 15px;
+            }
+        }
+
+        .location-form {
+            
+            position: relative;
+
+            input {
+                margin-top: 10px;
+            }
+
+            section {
+                position: absolute;
+                top: 100%;
+                left: 0%;
+                max-height: 300px;
+                overflow-y: auto;
+                margin: 0;
+                display: flex;
+                flex: column;
+                align-items: center;
+
+                ul {
+                    list-style-type: none;
+                    background-color: white;
+                    padding: 5px;
+        
+                    li {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: center;
+                        border-radius: 5px;
+                        padding: 5px;
+                        background-color: rgb(240, 238, 238);
+                        margin-bottom: 5px;
+                        cursor: pointer;
+                        color: black;
+        
+                        &:hover {
+                            background-color: rgb(190, 187, 187);
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+
+    .formSkillsMain {
+
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin-top: 15px;
+
+        input[type=text] {
+            border-radius: 10px;
+            padding: 10px 5px;
+            margin-bottom: 10px;
+            width: 300px;
+        }
+
+        ul {
+            list-style-type: none;
+
+            li {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                border-radius: 5px;
+                padding: 5px;
+                background-color: rgb(240, 238, 238);
+                margin-bottom: 5px;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: rgb(190, 187, 187);
+                }
+            }
+        }
+
+        .allSkills {
+            
+            margin-right: 20px;
+            width: 300px;
+
+            ul {
+                max-height: 400px;
+                overflow-y: auto;
+            }
+        }
+
+        .mySkills {
+
+            margin-top: 50px;
+
+            ul {
+                display: grid;
+                grid-template-columns: 300px 300px;
+                grid-gap: 5px;
+            }
+
+            .fa-solid.fa-xmark {
+                margin-left: 10px;
+            }
+            
+        }
+    }

@@ -1,0 +1,8 @@
+<app-search-bar></app-search-bar>
+<main class="container">
+    <app-filter-list class="filters"></app-filter-list>
+    <section class="freelancers-list">
+        <app-freelancer-box *ngFor="let freelancer of freelancers" [freelancer]=freelancer></app-freelancer-box>
+    </section>
+</main>
+

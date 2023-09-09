@@ -1,0 +1,133 @@
+@import '../../../../../sass/mixins';
+@import '../../../../../sass/variables';
+
+.freelancer-box {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+    &:hover {
+        
+        box-shadow: 5px 5px rgb(206, 205, 205);
+        transform: scale(1.01);
+    }
+
+    .superior-zone {
+        
+
+        @include phone {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            align-items: flex-start;
+        }
+
+        .profile-photo {
+
+            width: 100%;
+
+            @include phone {
+                width: 150px;
+                border-radius: 100%;
+                margin: 5px 0px 5px 5px;
+            }
+            
+        }
+
+        img + section {
+            display: flex;
+            flex-direction: column;
+            margin: 5px 0px 0px 10px;
+
+            .name {
+
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                h2 {
+                    font-size: 20px;
+                    font-family: $font-family-title;
+                    font-weight: lighter;
+                    margin: 0;
+                }
+
+                i {
+                    font-size: 30px;
+                    margin-right: 5px;
+                }
+            }
+            
+
+            h3 {
+                font-size: 14px;
+                font-weight: lighter;
+                margin: 0;
+                font-style: italic;
+                font-family: $font-family;
+            }
+
+            .location {
+
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin-top: 5px;
+
+                i {
+                    font-size: 20px;
+                    color: red;
+                }
+
+                p {
+                    margin: 0px 0px 0px 6px;
+                    font-size: 14px;
+                }
+            }
+
+            .price {
+
+                display: flex;
+                justify-content: flex-end;
+                margin-right: 18px;
+
+                p {
+                    font-size: 25px;
+                    font-weight: bolder;
+                    padding: 8px;
+                    text-decoration: underline;
+                    margin: 0;
+                }
+                
+            }
+        }
+    }
+
+    .inferior-zone {
+
+        background-color: #f9fdff;
+        border-top: 1px solid black;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+
+        ul {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            list-style: none;
+            margin-left: 10px;
+            padding: 10px 0px;
+
+            li {
+                margin-right: 10px;
+                padding: 5px;
+                background-color: $info;
+                border-radius: 5px;
+                font-size: 16px;
+                text-align: center;
+            }
+        }
+    }
+}
+

@@ -1,0 +1,68 @@
+<section class="user-proposal-wrapper">
+  <section class="user-proposal-list" >
+    <shared-dropdown [conf]="conf1">
+      <div class="proposal-box" *ngFor="let proposal of noConfirmedList; index as i" (click)="openProposalDetailsNoConfirmed(i)">
+        <div>
+          <h3 *ngIf="userType == 'freelancer'">{{proposal.seekerName}}</h3>
+          <h3 *ngIf="userType == 'seeker'">{{proposal.userFreelancerName}}</h3>
+          <h3 *ngIf="userType == 'administrator'">{{proposal.seekerName}} -> {{proposal.userFreelancerName}}</h3>
+          <div>
+            <p>{{proposal.proposalTitle}}</p>
+          </div>
+        </div>
+        <section>
+          <div class="optionsStatus">
+            <p class="date">
+              {{ proposal.proposalSendDate ? proposal.proposalSendDate.getDate() : '' }}
+              / {{ proposal.proposalSendDate ? proposal.proposalSendDate.getMonth()+1 : '' }}
+              / {{ proposal.proposalSendDate ? proposal.proposalSendDate.getFullYear() : '' }}
+            </p>
+            <button *ngIf="userType == 'freelancer' || userType == 'administrator'" class="green" (click)="confirmProposal(i, 'accepted'); $event.stopPropagation()"><i class="fa-solid fa-check"></i></button>
+            <button *ngIf="userType == 'seeker' || userType == 'administrator'" class="yellow" (click)="editProposal(i); $event.stopPropagation()"><i class="fa-solid fa-pencil"></i></button>
+            <button *ngIf="userType == 'freelancer' || userType == 'administrator'" class="red" (click)="confirmProposal(i, 'rejected'); $event.stopPropagation()"><i class="fa-solid fa-xmark"></i></button>
+            <button *ngIf="userType == 'seeker' || userType == 'administrator'" class="red" (click)="deleteProposal(i); $event.stopPropagation()"><i class="fa-solid fa-trash"></i></button>
+          </div>
+        </section>
+      </div>
+      <p *ngIf="noConfirmedList.length == 0">Aún no existen propuestas sin confirmar</p>
+    </shared-dropdown>
+
+    <shared-dropdown [conf]="conf2">
+      <div class="proposal-box" *ngFor="let proposal of confirmedList; index as i" (click)="openProposalDetailsConfirmed(i)">
+        <div>
+          <h3 *ngIf="userType == 'freelancer'">{{proposal.seekerName}}</h3>
+          <h3 *ngIf="userType == 'seeker'">{{proposal.userFreelancerName}}</h3>
+          <h3 *ngIf="userType == 'administrator'">{{proposal.seekerName}} -> {{proposal.userFreelancerName}}</h3>
+          <div>
+            <p>{{proposal.proposalTitle}}</p>
+          </div>
+        </div>
+        <section>
+          <div class="optionsStatus">
+            <p class="date">
+              {{ proposal.proposalSendDate ? proposal.proposalSendDate.getDate() : '' }}
+              / {{ proposal.proposalSendDate ? proposal.proposalSendDate.getMonth()+1 : '' }}
+              / {{ proposal.proposalSendDate ? proposal.proposalSendDate.getFullYear() : '' }}
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              {{ proposal.proposalConfirmDate ? proposal.proposalConfirmDate.getDate() : '' }}
+              / {{ proposal.proposalConfirmDate ? proposal.proposalConfirmDate.getMonth()+1 : '' }}
+              / {{ proposal.proposalConfirmDate ? proposal.proposalConfirmDate.getFullYear() : '' }}
+            </p>
+            <p *ngIf="proposal.proposalStatus == 'accepted'" class="green-font">ACEPTADA</p>
+            <p *ngIf="proposal.proposalStatus== 'rejected'" class="red-font">RECHAZADA</p>
+          </div>
+        </section>
+      </div>
+      <p *ngIf="confirmedList.length == 0">Aún no existen propuestas confirmadas</p>
+    </shared-dropdown>
+
+  </section>
+</section>
+
+<shared-modal [modalConfiguration]="modalConfiguration" (modalClosed)="deleteProposalToModal()"><app-proposal-details [proposal]="proposalToModal"></app-proposal-details></shared-modal>
+<shared-modal [modalConfiguration]="modalEdit" (modalClosed)="deleteProposalToModal()">
+  <ng-container *ngIf="proposalToModal.proposalId != 0">
+    <app-user-proposal-edit [proposal]="proposalToModal" (changeEmit)="getAllProposals()"></app-user-proposal-edit>
+  </ng-container>
+  
+</shared-modal>

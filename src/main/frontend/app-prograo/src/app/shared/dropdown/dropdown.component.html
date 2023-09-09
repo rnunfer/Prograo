@@ -1,0 +1,12 @@
+<section class="dropdown-body">
+    <section class="dropdown-header" (click)="changeShow()">
+        <i class="fa-solid fa-angles-up" [ngClass]="{'rotate': show}"></i>
+        <h3>{{conf.title}}</h3>
+    </section>
+    <section class="dropdown-main" [@fadeIn]="show" [@fadeOut]="!show" *ngIf="show">
+      <div class="content">
+        <ng-content></ng-content>
+      </div>
+
+    </section>
+</section>

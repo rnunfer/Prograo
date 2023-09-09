@@ -1,0 +1,18 @@
+/* COLORES */
+$primary: #FF7F40;
+$primary-hover: #f1702f;
+$primary-dark: darken($primary, 10%);
+$secondary: #08232C;
+$secondary-hover: #0c2831;
+$secondary-dark: darken($secondary, 10%);
+$info: #FAF3DB;
+
+/* TAMAÑOS */
+$max_width: 1400px;
+$phone : 480px;
+$tablet: 768px;
+$desktop: 1100px;
+
+/* FUENTES */
+$font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$font-family-title: "Merriweather"

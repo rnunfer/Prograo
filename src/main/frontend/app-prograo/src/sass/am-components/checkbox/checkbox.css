@@ -1,0 +1,17 @@
+.mat-mdc-checkbox.modify {
+  /*.mdc-checkbox {
+
+      .mat-mdc-checkbox-touch-target {
+          height: 20px;
+      }
+
+      .mdc-checkbox__native-control {
+          top: 60px;
+      }
+
+  }*/
+}
+.mat-mdc-checkbox.modify label {
+  font-size: 14px;
+  padding: 0px;
+}/*# sourceMappingURL=checkbox.css.map */

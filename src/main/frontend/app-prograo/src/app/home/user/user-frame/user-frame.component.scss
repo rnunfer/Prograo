@@ -1,0 +1,30 @@
+@import '../../../../sass/mixins';
+@import '../../../../sass/variables';
+
+main {
+
+  padding-top: 20px;
+
+  @include tablet() {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  }
+
+   .app-user-freelancer-menu {
+      display: none;
+      min-height: 80vh;
+
+      @include tablet() {
+        display: block;
+        grid-column: 1/2;
+      }
+   }
+
+   .user-freelancer-content {
+
+      @include tablet() {
+        grid-column: 2/9;
+        margin-left: 10px;
+      }
+   }
+}

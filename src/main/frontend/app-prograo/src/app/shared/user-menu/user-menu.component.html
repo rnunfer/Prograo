@@ -1,0 +1,3 @@
+<ul [ngStyle]="{'background-color': secundary ? '$secondary' : 'white'}">
+    <li *ngFor="let item of menuItems" [ngStyle]="{'color': secundary ? 'white' : 'black'}" [routerLink]="[item.route]" routerLinkActive="selected" (click)="emitAction()">{{item.name}}</li>
+</ul>

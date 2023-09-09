@@ -1,0 +1,57 @@
+@mixin h1 {
+  font-family: $font-family-title;
+  font-size: 40px;
+  font-weight: lighter;
+  text-align: center;
+}
+
+@mixin h3 {
+  font-family: $font-family-title;
+  font-size: 28px;
+  font-weight: lighter;
+  text-align: center;
+}
+
+@mixin phone {
+  @media only screen and (min-width: #{$phone}) {
+      @content;
+  }
+}
+
+@mixin tablet {
+  @media only screen and (min-width: #{$tablet}) {
+      @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: #{$desktop}) {
+      @content;
+  }
+}
+
+@mixin button($style) {
+
+  $colour: $primary;
+  $colour-hover: $primary_hover;
+  $colour-letra: black;
+
+  @if $style == 'secundary' {
+    $colour: $secondary;
+    $colour-hover: $secondary_hover;
+    $colour-letra: white;
+  }
+
+  background-color: $colour;
+  border-radius: 10px;
+  padding: 10px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: $colour-letra;
+  transition: 0.2s;
+
+  &:hover {
+    background-color: $colour-hover;
+  }
+}

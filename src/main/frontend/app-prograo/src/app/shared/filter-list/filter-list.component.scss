@@ -1,0 +1,43 @@
+@import '../../../sass/mixins';
+@import '../../../sass/variables';
+
+#filters form {
+
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 5px;
+    border-radius: 10px;
+
+    h3 {
+        font-size: 16px;
+        font-family: $font-family-title;
+        margin-top: 16px;
+        font-weight: lighter;
+    }
+
+    .personalized {
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+        margin-top: 5px;
+        
+        input {
+            width: 80px;
+        }
+
+        button {
+            width: 30px;
+        }
+    }
+
+    .more {
+        color: $primary;
+        background: none;
+        border: none;
+        margin-top: 5px;
+        text-decoration: underline;
+        text-align: left;
+    }
+}

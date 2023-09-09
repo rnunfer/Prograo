@@ -1,0 +1,17 @@
+<header>
+  <div class="container">
+    <img class="logo" src="assets/Logo_recortado.png" routerLink="/index">
+    <shared-button *ngIf="user.userType == 'guest'" [conf]="buttonConfiguration" (clickEvent)="openLoginRegister()"></shared-button>
+    <div *ngIf="user.userType != 'guest'" class="img-wrapper">
+      <img class="user-profile-photo" [src]="'assets/' + user.profilePhoto" (click)="openCloseMenu()">
+    </div>
+    <section *ngIf="user.userType != 'guest'" [ngSwitch]="menuStatus" class="menu">
+      <section *ngSwitchCase="'userMenu'" >
+        <shared-user-menu (action)="openCloseMenu()"></shared-user-menu>
+        <p (click)="closeSession()">Cerrar sesión</p>
+      </section>
+    </section>
+  </div>
+</header>
+
+<shared-modal [modalConfiguration]="modalConfiguration"><app-login-register></app-login-register></shared-modal>

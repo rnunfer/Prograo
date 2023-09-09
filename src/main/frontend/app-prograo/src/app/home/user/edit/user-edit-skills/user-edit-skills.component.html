@@ -1,0 +1,29 @@
+<form class="form-wrapper" [formGroup]="formSkills">
+    <section class="form-title">
+        <h2>Habilidades</h2>
+    </section>
+
+    <section class="formSkillsMain">
+        <section class="allSkills">
+            <input type="text" formControlName="filterSearch" (ngModelChange)="searchDataSkills($event)" />
+            <ul>
+                <li *ngFor="let skill of filteredData; index as i" (click)="addToFreelancerSkills(i)">
+                    <p>{{skill.name}}</p>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </li>
+            </ul>
+        </section>
+        <section class="mySkills">
+            <ul>
+                <li *ngFor="let skill of freelancerSkillsList; index as i">
+                    <p>{{skill.name}}</p>
+                    <div>
+                        <i class="fa-regular fa-star" *ngIf="!skill.outstanding && numberOutstandingSkills < 5" (click)="changeOutstanding(i)"></i>
+                        <i class="fa-solid fa-star" *ngIf="skill.outstanding" (click)="changeOutstanding(i)"></i>
+                        <i class="fa-solid fa-xmark" (click)="removeFromFreelancerSkills(i)"></i>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </section>
+</form>

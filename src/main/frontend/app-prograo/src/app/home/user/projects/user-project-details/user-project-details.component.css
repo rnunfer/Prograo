@@ -1,0 +1,272 @@
+@charset "UTF-8";
+/* COLORES */
+/* TAMAÑOS */
+/* FUENTES */
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+@media only screen and (min-width: 1100px) {
+  .wrapper {
+    grid-template-columns: 1fr 300px;
+  }
+}
+.wrapper > section {
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  border-radius: 10px;
+  padding: 5px;
+}
+.wrapper .list-returner {
+  font-size: 12px;
+  cursor: pointer;
+  text-decoration: underline;
+  margin-bottom: 10px;
+  font-family: "Merriweather";
+}
+.wrapper .project-section .project-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.wrapper .project-section .project-header h2 {
+  font-family: "Merriweather";
+}
+.wrapper .project-section .project-header p {
+  font-family: "Merriweather";
+  font-style: italic;
+}
+.wrapper .project-section .project-main {
+  margin-top: 20px;
+}
+.wrapper .project-section .project-main h3 {
+  font-family: "Merriweather";
+  border-bottom: 1px solid lightgray;
+}
+.wrapper .project-section .project-main form {
+  margin-bottom: 20px;
+}
+.wrapper .project-section .project-main form .form-element {
+  display: grid;
+  grid-template-columns: 1fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 10px;
+}
+@media only screen and (min-width: 480px) {
+  .wrapper .project-section .project-main form .form-element {
+    grid-template-columns: auto 1fr;
+  }
+}
+.wrapper .project-section .project-main form .form-element label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+.wrapper .project-section .project-main .users-information > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.wrapper .project-section .project-main .users-information i {
+  font-size: 25px;
+  margin-right: 40px;
+}
+.wrapper .project-section .project-main .users-information .user-information {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-top: 20px;
+}
+.wrapper .project-section .project-main .users-information .user-information .profile-photo {
+  width: 70px;
+  border-radius: 100%;
+  margin-right: 10px;
+}
+.wrapper .project-section .project-main .users-information .user-information .user-info p {
+  font-size: 14px;
+}
+.wrapper .project-section .formSkillsMain {
+  display: grid;
+  grid-template-columns: 1fr;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-top: 15px;
+}
+@media only screen and (min-width: 768px) {
+  .wrapper .project-section .formSkillsMain {
+    grid-template-columns: 300px 1fr;
+    grid-gap: 10px;
+  }
+}
+.wrapper .project-section .formSkillsMain input[type=text] {
+  border-radius: 10px;
+  padding: 10px 5px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+.wrapper .project-section .formSkillsMain ul {
+  list-style-type: none;
+}
+.wrapper .project-section .formSkillsMain ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: rgb(240, 238, 238);
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+.wrapper .project-section .formSkillsMain ul li:hover {
+  background-color: rgb(190, 187, 187);
+}
+.wrapper .project-section .formSkillsMain .allSkills {
+  margin-right: 20px;
+  width: 100%;
+}
+.wrapper .project-section .formSkillsMain .allSkills ul {
+  max-height: 400px;
+  overflow-y: auto;
+}
+.wrapper .project-section .formSkillsMain .mySkills {
+  margin-top: 50px;
+}
+.wrapper .project-section .formSkillsMain .mySkills ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+  grid-gap: 5px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+.wrapper .project-section .formSkillsMain .mySkills .fa-solid.fa-xmark {
+  margin-left: 10px;
+}
+.wrapper .project-section .project-calification {
+  margin-top: 20px;
+}
+.wrapper .project-section .project-calification h3 {
+  font-family: "Merriweather";
+  border-bottom: 1px solid lightgray;
+  margin-bottom: 10px;
+}
+.wrapper .project-section .project-calification div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 5px;
+}
+@media only screen and (min-width: 480px) {
+  .wrapper .project-section .project-calification div {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+.wrapper .chat-section {
+  width: 100%;
+  height: 80vh;
+  overflow: auto;
+  position: relative;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.wrapper .chat-section .message {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 10px;
+}
+.wrapper .chat-section .message.right {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+.wrapper .chat-section .message.right img {
+  display: none;
+}
+.wrapper .chat-section .message img {
+  width: 20px;
+  border-radius: 100%;
+  margin-right: 5px;
+}
+.wrapper .chat-section .message p {
+  font-size: 12px;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 5px;
+  border-radius: 5px;
+}
+.wrapper .chat-section form {
+  position: sticky;
+  bottom: 20px;
+  padding: 10px;
+  margin-top: 10px;
+  top: 0%;
+}
+.wrapper .chat-section form input {
+  width: 100%;
+  outline: none;
+  padding: 5px;
+  border-radius: 20px;
+}
+
+.no-grid {
+  grid-template-columns: 1fr !important;
+}/*# sourceMappingURL=user-project-details.component.css.map */

@@ -1,0 +1,60 @@
+@charset "UTF-8";
+/* COLORES */
+/* TAMAÑOS */
+/* FUENTES */
+.loginRegisterHeader {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+.loginRegisterHeader p {
+  text-align: center;
+  border: 2px solid white;
+  border-bottom: 2px solid lightgray;
+  font-family: "Merriweather";
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  padding: 10px 0px 10px 0px;
+}
+.loginRegisterHeader p:hover {
+  border: 2px solid #FF7F40;
+}
+
+.loginRegisterMain {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 10px 0px;
+}
+.loginRegisterMain p {
+  background-color: #f63d68;
+  padding: 5px;
+  text-align: center;
+  color: white;
+  margin-top: 10px;
+}
+
+shared-select {
+  margin-top: 10px;
+}
+
+shared-button, shared-input {
+  margin-top: 10px;
+}
+
+.selected {
+  border-bottom: 2px solid #ff5d0d !important;
+  background: -webkit-gradient(linear, left bottom, left top, from(#FF7F40), color-stop(110%, white));
+  background: linear-gradient(to top, #FF7F40, white 110%);
+}/*# sourceMappingURL=login-register.component.css.map */

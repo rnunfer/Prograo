@@ -1,0 +1,219 @@
+@import '../../../../../sass/mixins';
+@import '../../../../../sass/variables';
+
+.mainInformation {
+
+
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+    @include phone() {
+        flex-direction: row;
+    }
+
+    .profile-photo {
+
+        width: 300px;
+        border-radius: 100%;
+
+        @include phone() {
+            width: 200px;
+
+        }
+
+    }
+
+    section {
+
+        margin-left: 20px;
+
+        h2 {
+            font-size: 35px;
+            font-family: $font-family-title;
+            font-weight: lighter;
+            text-decoration: underline;
+        }
+
+        em {
+            font-size: 25px;
+        }
+
+
+        .location {
+            display: flex;
+            flex-direction: row;
+            margin-top: 10px;
+
+            i {
+                color: red;
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 16px;
+                margin-left: 5px;
+            }
+        }
+
+        .rate {
+
+            margin-top: 20px;
+
+            p {
+                font-size: 15px;
+            }
+
+            b {
+                font-size: 30px;
+            }
+        }
+    }
+
+}
+
+.section-freelancer-details {
+
+    margin-top: 20px;
+    background-color: rgb(250, 250, 250);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+    h2 {
+        font-size: 25px;
+        font-family: $font-family-title;
+        font-weight: lighter;
+        font-variant: small-caps;
+        margin-bottom: 10px;
+        color: $secondary;
+        letter-spacing: 2px;
+    }
+
+    .social-networks {
+        display: flex;
+        align-items: center;
+        margin-top: 15px;
+        
+        a {
+            color: black;
+        }
+
+        i {
+            margin-right: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    }
+}
+
+.proposal-form {
+
+    position: relative;
+
+    .proposal-title {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .hidder {
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(211, 211, 211, 0.732);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        border-radius: 10px;
+    }
+}
+
+.skills {
+
+    &>div {
+
+        @include tablet() {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 10px;
+
+
+        }
+
+        div {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding-right: 10px;
+
+            @include tablet() {
+
+                &:nth-child(odd) {
+                    border-right: 2px solid lightgrey;
+                }
+            }
+
+            .nameSkill {
+                color: $primary;
+                font-weight: bold;
+            }
+
+            .outstanding::after {
+                content: "★";
+                color: gold;
+                margin-left: 5px;
+            }
+        }
+    }
+}
+
+.califications {
+
+    .one {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        padding-bottom: 8px;
+        margin-bottom: 10px;
+        border-bottom: 2px solid lightgrey;
+
+        img {
+            width: 60px;
+            border-radius: 100%;
+        }
+
+        section {
+            margin-left: 10px;
+
+            h3 {
+                font-size: 16px;
+                font-weight: bold;
+                font-style: italic;
+            }
+
+            p + div {
+                display: flex;
+                flex-direction: row;
+
+                p {
+                    margin-left: 10px;
+                    color: rgb(112, 112, 112);
+                }
+            }
+
+            & > p {
+                margin-top: 10px;
+            }
+        }
+    }
+}

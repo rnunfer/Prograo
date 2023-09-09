@@ -1,0 +1,12 @@
+<section>
+    <i [ngStyle]="{'font-size': starSize + 'px'}" *ngIf="calification >= 1.0" class="fa-solid fa-star" (click)="setNote(2)"></i>
+    <i [ngStyle]="{'font-size': starSize + 'px'}" *ngIf="calification >= 3.0" class="fa-solid fa-star" (click)="setNote(4)"></i>
+    <i [ngStyle]="{'font-size': starSize + 'px'}" *ngIf="calification >= 5.0" class="fa-solid fa-star" (click)="setNote(6)"></i>
+    <i [ngStyle]="{'font-size': starSize + 'px'}" *ngIf="calification >= 7.0" class="fa-solid fa-star" (click)="setNote(8)"></i>
+    <i [ngStyle]="{'font-size': starSize + 'px'}" *ngIf="calification >= 9.0" class="fa-solid fa-star" (click)="setNote(10)"></i>
+    <ng-container *ngFor="let i of [1,2,3,4,5]">
+        <i [ngStyle]="{'font-size': starSize + 'px'}" *ngIf="calification < i*2-1" class="fa-regular fa-star" (click)="setNote(i*2)"></i>
+    </ng-container>
+    <p [ngStyle]="{'font-size': starSize + 'px'}" *ngIf="text">de {{numCalification}} calificaciones</p>
+</section>
+

@@ -1,0 +1,263 @@
+@import '../../../../../sass/mixins';
+@import '../../../../../sass/variables';
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+
+  @include desktop() {
+    grid-template-columns: 1fr 300px;
+  }
+
+  &>section {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    border-radius: 10px;
+    padding: 5px;
+  }
+
+  .list-returner {
+    font-size: 12px;
+    cursor: pointer;
+    text-decoration: underline;
+    margin-bottom: 10px;
+    font-family: $font-family-title;
+  }
+
+  .project-section {
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      h2 {
+        font-family: $font-family-title;
+      }
+
+      p {
+        font-family: $font-family-title;
+        font-style: italic;
+      }
+    }
+
+    .project-main {
+      margin-top: 20px;
+
+      h3 {
+        font-family: $font-family-title;
+        border-bottom: 1px solid lightgray;
+      }
+
+      form {
+
+        margin-bottom: 20px;
+
+        .form-element {
+          display: grid;
+          grid-template-columns: 1fr;
+          align-items: center;
+          margin-top: 10px;
+          
+          @include phone() {
+            grid-template-columns: auto 1fr;
+          }
+
+          label {
+            font-weight: bold;
+            margin-right: 10px;
+          }
+        }
+      }
+
+      .users-information {
+
+        &>div {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        i {
+          font-size: 25px;
+          margin-right: 40px;
+        }
+
+        .user-information {
+
+          display: flex;
+          flex-direction: row;
+          align-items: flex-start;
+          justify-content: flex-start;
+          margin-top: 20px;
+
+          .profile-photo {
+            width: 70px;
+            border-radius: 100%;
+            margin-right: 10px;
+          }
+
+          .user-info {
+
+            p {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+
+    .formSkillsMain {
+
+      display: grid;
+      grid-template-columns: 1fr;
+      align-items: flex-start;
+      justify-content: flex-start;
+      margin-top: 15px;
+
+      @include tablet() {
+          grid-template-columns: 300px 1fr;
+          grid-gap: 10px
+      }
+
+      input[type=text] {
+          border-radius: 10px;
+          padding: 10px 5px;
+          margin-bottom: 10px;
+          width: 100%;
+      }
+
+      ul {
+          list-style-type: none;
+
+          li {
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              align-items: center;
+              border-radius: 5px;
+              padding: 5px;
+              background-color: rgb(240, 238, 238);
+              margin-bottom: 5px;
+              cursor: pointer;
+
+              &:hover {
+                  background-color: rgb(190, 187, 187);
+              }
+          }
+      }
+
+      .allSkills {
+          
+          margin-right: 20px;
+          width: 100%;
+
+          ul {
+              max-height: 400px;
+              overflow-y: auto;
+          }
+      }
+
+      .mySkills {
+
+          margin-top: 50px;
+
+          ul {
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+              grid-gap: 5px;
+              max-height: 400px;
+              overflow-y: auto;
+          }
+
+          .fa-solid.fa-xmark {
+              margin-left: 10px;
+          }
+          
+      }
+  }
+
+    .project-calification {
+      margin-top: 20px;
+
+      h3 {
+        font-family: $font-family-title;
+        border-bottom: 1px solid lightgray;
+        margin-bottom: 10px;
+      }
+
+      div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 5px;
+
+        @include phone() {
+          flex-direction: row;
+        }
+      }
+    }
+
+  }
+
+  .chat-section {
+    width: 100%;
+    height: 80vh;
+    overflow: auto;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+    .message {
+
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+
+      &.right {
+        justify-content: flex-end;
+
+        img {
+          display: none;
+        }
+      }
+
+      img {
+        width: 20px;
+        border-radius: 100%;
+        margin-right: 5px;
+      }
+
+      p {
+        font-size: 12px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        padding: 5px;
+        border-radius: 5px;
+      }
+
+    }
+
+    form {
+      position: sticky;
+      bottom: 20px;
+      padding: 10px;
+      margin-top: 10px;
+      top: 0%;
+
+      input {  
+        width: 100%;
+        outline: none;
+        padding: 5px;
+        border-radius: 20px;
+      }
+    }
+    
+  }
+
+}
+
+.no-grid {
+  grid-template-columns: 1fr !important;
+}

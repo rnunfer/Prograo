@@ -1,0 +1,20 @@
+<div id="loginRegister">
+  <section class="loginRegisterHeader">
+      <p (click)="changeToLogin()" [ngClass]="{'selected': login}">Iniciar Sesión</p>
+      <p (click)="changeToRegister()" [ngClass]="{'selected': register}">Registrarse</p>
+  </section>
+  <form class="loginRegisterMain login" [formGroup]="formLogin" (ngSubmit)="submitLogin()" *ngIf="login">
+    <shared-input [conf]="loginEmailConfiguration"></shared-input>
+    <shared-input [conf]="loginPasswordConfiguration"></shared-input>
+    <p *ngIf="showLoginErrorMessage">Los datos introducidos no son correctos</p>
+    <shared-button [conf]="buttonLoginConf" (clickEvent)="submitLogin()"></shared-button>
+  </form>
+  <form class="loginRegisterMain register" [formGroup]="formRegister" (ngSubmit)="submitRegister()" *ngIf="register">
+    <shared-select [conf]="registerUserTypeConfiguration"></shared-select>
+    <shared-input [conf]="registerEmailConfiguration"></shared-input>
+    <shared-input [conf]="registerPasswordConfiguration"></shared-input>
+    <shared-input [conf]="registerPassword2Configuration"></shared-input>
+    <p *ngIf="showRegisterErrorMessage">Los datos introducidos no son correctos</p>
+    <shared-button [conf]="buttonRegisterConf" (clickEvent)="submitRegister()"></shared-button>
+  </form>
+</div>

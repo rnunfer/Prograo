@@ -1,0 +1,116 @@
+<section class="wrapper" *ngIf="project">
+  <section class="project-section" *ngIf="project">
+    <p class="list-returner" [routerLink]="['/user/projects']">< Volver al listado de proyectos</p>
+    <section class="project-header">
+      <h2>{{project.projectTitle}}</h2>
+      <div>
+        <p *ngIf="project.projectStatus == 'inprogress'">EN PROGRESO</p>
+        <p *ngIf="project.projectStatus == 'preproject'">PRE-PROYECTO</p>
+        <p *ngIf="project.projectStatus == 'finished'">FINALIZADO</p>
+      </div>
+    </section>
+
+    <section class="project-main">
+      <h3>Datos del projecto</h3>
+      <form>
+        <div class="form-element">
+          <label>Título:</label>
+          <shared-input *ngIf="project.projectStatus == 'preproject'" [conf]="confTitle" (dataEmit)="changeField('projectTitle')"></shared-input>
+          <p *ngIf="project.projectStatus != 'preproject'">{{project.projectTitle}}</p>
+        </div>
+        <div class="form-element">
+          <label>Descripción:</label>
+          <shared-input *ngIf="project.projectStatus == 'preproject'" [conf]="confDescription" (dataEmit)="changeField('projectDescription')"></shared-input>
+          <p *ngIf="project.projectStatus != 'preproject'">{{project.projectDescription}}</p>
+        </div>
+        <div class="form-element">
+          <label>Estilo de trabajo:</label>
+          <shared-select *ngIf="project.projectStatus == 'preproject'" [conf]="confWorkStyleSelect" (dataEmit)="changeField('projectWorkStyle')"></shared-select>
+          <p *ngIf="project.projectWorkStyle == 'remoteWork' && project.projectStatus != 'preproject'">Teletrabajo</p>
+          <p *ngIf="project.projectWorkStyle == 'inPersonWork' && project.projectStatus != 'preproject'">Presencial</p>
+          <p *ngIf="project.projectWorkStyle == 'hybridWork' && project.projectStatus != 'preproject'">Híbrido</p>
+          <p *ngIf="project.projectWorkStyle == 'undefined' && project.projectStatus != 'preproject'">Sin definir</p>
+        </div>
+        <div class="form-element">
+          <label>Precio de contratación:</label>
+          <shared-input *ngIf="project.projectStatus == 'preproject'" [conf]="confPrice" (dataEmit)="changeField('projectContractPrice')"></shared-input>
+          <p *ngIf="project.projectStatus != 'preproject'">{{project.projectContractPrice}}</p>
+        </div>
+      </form>
+
+      <h3>Habilidades del proyecto</h3>
+      <form class="formSkillsMain" [formGroup]="formSkills" [ngClass]="{'no-grid': project.projectStatus != 'preproject'}">
+        <section class="allSkills" *ngIf="project.projectStatus == 'preproject'">
+            <input type="text" formControlName="filterSearch" (ngModelChange)="searchDataSkills($event)" />
+            <ul>
+                <li *ngFor="let skill of filteredData; index as i" (click)="addToProjectSkills(i)">
+                    <p>{{skill.name}}</p>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </li>
+            </ul>
+        </section>
+        <section class="mySkills">
+            <ul>
+                <li *ngFor="let skill of project.skillList; index as i">
+                    <p>{{skill.name}}</p>
+                    <div *ngIf="project.projectStatus == 'preproject'">
+                        <i class="fa-solid fa-xmark" (click)="removeFromProjectSkills(i)"></i>
+                    </div>
+                </li>
+            </ul>
+        </section>
+      </form>
+
+      <h3>Integrantes del proyecto</h3>
+
+      <section class="users-information">
+        <div>
+          <section class="user-information">
+            <img class="profile-photo" [src]="'assets/' + project.userSeekerProfilePhoto">
+            <div class="user-info">
+              <h4>{{project.userSeekerName}}</h4>
+              <p>{{project.userSeekerTitle}}</p>
+              <shared-location [city]="project.userSeekerCity" [country]="project.userSeekerCountry" [fontSizeIcon]="20" [fontSizeP]="14"></shared-location>
+            </div>
+          </section>
+          <shared-button *ngIf="!project.projectSignedBySeeker && userType == 'seeker'" [conf]="confSign" (clickEvent)="signSeeker()"></shared-button>
+          <i *ngIf="!project.projectSignedBySeeker && (userType == 'freelancer' || userType == 'administrator')" class="fa-solid fa-xmark"></i>
+          <i *ngIf="project.projectSignedBySeeker" class="fa-solid fa-check"></i>
+        </div>
+        <div>
+          <section class="user-information">
+          <img class="profile-photo" [src]="'assets/' + project.userFreelancerProfilePhoto">
+          <div class="user-info">
+            <h4>{{project.userFreelancerName}}</h4>
+            <p>{{project.userFreelancerTitle}}</p>
+            <shared-location [city]="project.userSeekerCity" [country]="project.userFreelancerCountry" [fontSizeIcon]="20" [fontSizeP]="14"></shared-location>
+          </div>
+        </section>
+        <shared-button *ngIf="!project.projectSignedByFreelancer && userType == 'freelancer'" [conf]="confSign" (clickEvent)="signFreelancer()"></shared-button>
+        <i *ngIf="!project.projectSignedByFreelancer && (userType == 'seeker' || userType == 'administrator')" class="fa-solid fa-xmark"></i>
+        <i *ngIf="project.projectSignedByFreelancer" class="fa-solid fa-check"></i>
+        </div>
+      </section>
+    </section>
+
+    <section class="project-calification" *ngIf="project.projectStatus == 'finished'">
+      <h3>Calificación del proyecto</h3>
+      <shared-input *ngIf="userType == 'seeker'" class="calification-input"  [conf]="confCalificationDescription"></shared-input>
+      <p *ngIf="userType != 'seeker'">{{project.calificationDescription}}</p>
+      <div>
+        <app-stars-calification *ngIf="userType == 'seeker' || project.calificationNote != null" [starSize]="25" [calification]="project.calificationNote" (emitNote)="changeNote($event)"></app-stars-calification>
+        <shared-button *ngIf="userType == 'seeker'" [conf]="confCalification" (clickEvent)="sendCalification()"></shared-button>
+      </div>
+    </section>
+
+  </section>
+  <section class="chat-section">
+    <form (ngSubmit)="sendMessage(messageInput.value)" *ngIf="project.projectStatus != 'finished'">
+      <input type="text" placeholder="Escribir para enviar un mensaje" #messageInput>
+    </form>
+    <div class="message" *ngFor="let message of messageList; index as i" [ngClass]="{'right': message.userId == userId}">
+      <img [src]="'assets/' + message.userProfilePhoto">
+      <p>{{message.chatMessage}}</p>
+    </div>
+  </section>
+</section>

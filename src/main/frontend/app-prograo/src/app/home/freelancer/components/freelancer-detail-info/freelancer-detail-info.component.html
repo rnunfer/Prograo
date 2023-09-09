@@ -1,0 +1,74 @@
+<section class="mainInformation">
+    <img class="profile-photo" [src]="'assets/' + freelancer.userProfilePhoto">
+    <section>
+        <h2>{{freelancer.userName}}</h2>
+        <em>{{freelancer.userTitle}}</em>
+        <app-stars-calification [calification]="freelancer.totalCalification" [starSize]="16" [text]="true" [numCalification]="freelancer.numberCalification"></app-stars-calification>
+        <div class="location">
+            <i class="fa-solid fa-location-dot"></i>
+            <p>{{freelancer.userCity}}, {{freelancer.userCountry}}</p>
+        </div>
+        <div class="rate">
+            <p>Tarifa aproximada:</p>
+            <b>{{freelancer.freelancerRate}} €/hora</b>
+        </div>
+    </section>
+</section>
+
+<section class=" section-freelancer-details proposal-form">
+    <form [formGroup]="formProposal" (submit)="sendProposal()">
+        <section class="proposal-title">
+            <h2>Contactar con el freelancer</h2>
+            <shared-button [conf]="confProposalSubmit" (clickEvent)="sendProposal()"></shared-button>
+        </section>
+        <section class="proposal-info">
+          <b>Título:</b>
+          <shared-input [conf]="confTitle"></shared-input>
+          <b>Descripción:</b>
+          <shared-input [conf]="confDescription"></shared-input>
+          <p><b>Tiempo estimado: </b><shared-input [conf]="confEstimatedTime"></shared-input></p>
+          <p><b>Estilo de trabajo: </b><shared-select [conf]="confWorkStyleSelect"></shared-select></p>
+        </section>
+        <div *ngIf="userType != 'seeker'" class="hidder"><i class="fa-solid fa-lock"></i>&nbsp;Registrese como contratador para poder contactar con los freelancers</div>
+        <div *ngIf="userType == 'seeker' && status == 'inactive'" class="hidder"><i class="fa-solid fa-lock"></i>&nbsp;No podrá contratar freelancers hasta que active su cuenta</div>
+    </form>
+</section>
+
+<section class=" section-freelancer-details description">
+    <h2>Descripción</h2>
+    <p>{{freelancer.freelancerDescription}}</p>
+    <section class="social-networks">
+        <a [href]="'https://twitter.com/' + freelancer.freelancerTwitter" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+        <a [href]="'https://www.facebook.com/' + freelancer.freelancerFacebook" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        <a [href]="'https://www.linkedin.com/in/' + freelancer.freelancerLinkedin" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        <a [href]="'mailto:' + freelancer.freelancerEmail"><i class="fa-solid fa-envelope"></i></a>
+    </section>
+</section>
+
+<section class=" section-freelancer-details skills">
+    <h2>Habilidades</h2>
+    <div>
+        <div *ngFor="let skill of freelancer.skillList">
+            <p [ngClass]="{'outstanding': skill.outstanding == 1}" class="nameSkill">{{skill.name}}</p>
+            <p>{{skill.numUsed}} proyecto/s</p>
+        </div>
+    </div>
+</section>
+
+<section class="section-freelancer-details califications">
+    <h2>Comentarios</h2>
+    <div>
+        <div *ngFor="let calification of freelancer.calificationList" class="one">
+            <img class="profile-photo" [src]="'assets/' + calification.profilePhotoSeeker">
+            <section>
+                <h3>{{calification.nameSeeker}}</h3>
+                <div>
+                    <app-stars-calification [calification]="calification.noteCalification" [starSize]="15"></app-stars-calification>
+                    <p *ngIf="calification.dateCalification !== null">{{calification.dateCalification.getDate}}</p>
+                </div>
+                <p>{{calification.descriptionCalification}}</p>
+            </section>
+            
+        </div>
+    </div>
+</section>

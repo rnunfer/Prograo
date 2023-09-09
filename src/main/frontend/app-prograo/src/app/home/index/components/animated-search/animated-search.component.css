@@ -1,0 +1,341 @@
+@charset "UTF-8";
+/* COLORES */
+/* TAMAÑOS */
+/* FUENTES */
+#fondoGradiente {
+  height: 550px;
+  background: linear-gradient(-45deg, #FF7F40, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 20s ease infinite;
+          animation: gradient 20s ease infinite;
+  position: relative;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+#fondoGradiente .letrasInicio {
+  overflow: hidden;
+}
+#fondoGradiente .letrasInicio p, #fondoGradiente .letrasInicio img {
+  position: absolute;
+  -webkit-animation-name: derecha;
+          animation-name: derecha;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-fill-mode: none;
+          animation-fill-mode: none;
+  font-family: "Merriweather";
+}
+#fondoGradiente .letrasInicio p:nth-child(1) {
+  -webkit-animation: animacionJava 9s linear 0s infinite normal;
+          animation: animacionJava 9s linear 0s infinite normal;
+}
+#fondoGradiente .letrasInicio p:nth-child(2) {
+  -webkit-animation: animacionSpring 30s linear 0s infinite normal;
+          animation: animacionSpring 30s linear 0s infinite normal;
+}
+#fondoGradiente .letrasInicio p:nth-child(3) {
+  -webkit-animation: animacionThymeleaf 19s linear 0s infinite normal;
+          animation: animacionThymeleaf 19s linear 0s infinite normal;
+}
+#fondoGradiente .letrasInicio p:nth-child(4) {
+  -webkit-animation: animacionGit 15s linear 0s infinite normal;
+          animation: animacionGit 15s linear 0s infinite normal;
+}
+#fondoGradiente .letrasInicio img:nth-child(5) {
+  -webkit-animation: animacionOveja 50s linear 0s infinite alternate;
+          animation: animacionOveja 50s linear 0s infinite alternate;
+}
+#fondoGradiente .letrasInicio p:nth-child(6) {
+  -webkit-animation: animacionSQL 15s linear 0s infinite normal;
+          animation: animacionSQL 15s linear 0s infinite normal;
+}
+#fondoGradiente .letrasInicio p:nth-child(7) {
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
+  -webkit-animation: animacionLink 30s linear 0s infinite normal;
+          animation: animacionLink 30s linear 0s infinite normal;
+}
+@-webkit-keyframes animacionJava {
+  0% {
+    top: 33%;
+    left: 0%;
+  }
+  100% {
+    top: 33%;
+    left: 280%;
+  }
+}
+@keyframes animacionJava {
+  0% {
+    top: 33%;
+    left: 0%;
+  }
+  100% {
+    top: 33%;
+    left: 280%;
+  }
+}
+@-webkit-keyframes animacionSpring {
+  0% {
+    top: 12%;
+    left: 0%;
+  }
+  100% {
+    top: 12%;
+    left: 123%;
+  }
+}
+@keyframes animacionSpring {
+  0% {
+    top: 12%;
+    left: 0%;
+  }
+  100% {
+    top: 12%;
+    left: 123%;
+  }
+}
+@-webkit-keyframes animacionThymeleaf {
+  0% {
+    top: -30%;
+    left: 71%;
+  }
+  100% {
+    top: 120%;
+    left: 71%;
+  }
+}
+@keyframes animacionThymeleaf {
+  0% {
+    top: -30%;
+    left: 71%;
+  }
+  100% {
+    top: 120%;
+    left: 71%;
+  }
+}
+@-webkit-keyframes animacionGit {
+  0% {
+    top: 22%;
+    left: 123%;
+  }
+  100% {
+    top: 22%;
+    left: -5%;
+  }
+}
+@keyframes animacionGit {
+  0% {
+    top: 22%;
+    left: 123%;
+  }
+  100% {
+    top: 22%;
+    left: -5%;
+  }
+}
+@-webkit-keyframes animacionOveja {
+  0% {
+    top: 83%;
+    left: -50%;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    top: 83%;
+    left: 300%;
+    -webkit-transform: rotate(3600deg);
+            transform: rotate(3600deg);
+  }
+}
+@keyframes animacionOveja {
+  0% {
+    top: 83%;
+    left: -50%;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    top: 83%;
+    left: 300%;
+    -webkit-transform: rotate(3600deg);
+            transform: rotate(3600deg);
+  }
+}
+@-webkit-keyframes animacionSQL {
+  0% {
+    top: 74%;
+    left: -11%;
+  }
+  100% {
+    top: 74%;
+    left: 450%;
+  }
+}
+@keyframes animacionSQL {
+  0% {
+    top: 74%;
+    left: -11%;
+  }
+  100% {
+    top: 74%;
+    left: 450%;
+  }
+}
+@-webkit-keyframes animacionLink {
+  0% {
+    top: 248%;
+    left: 8%;
+  }
+  100% {
+    top: -200%;
+    left: 8%;
+  }
+}
+@keyframes animacionLink {
+  0% {
+    top: 248%;
+    left: 8%;
+  }
+  100% {
+    top: -200%;
+    left: 8%;
+  }
+}
+#fondoGradiente section {
+  z-index: 5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100%;
+}
+#fondoGradiente section::before {
+  content: "";
+  position: absolute;
+  top: 0%;
+  left: -50%; /* Adjust the left value to control the width of the inclined background */
+  width: 90%; /* Set the width to three times the section width to cover one-third */
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  -webkit-transform: skewX(30deg);
+          transform: skewX(30deg);
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+  z-index: -1;
+}
+#fondoGradiente section h1 {
+  font-family: "Merriweather";
+  font-size: 40px;
+  font-weight: lighter;
+  text-align: center;
+  width: 45%;
+  text-align: left;
+}
+#fondoGradiente section div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100%;
+}
+@media only screen and (min-width: 480px) {
+  #fondoGradiente section div {
+    width: 40%;
+  }
+}
+#fondoGradiente section div form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  background-color: white;
+  border-radius: 20px;
+  width: 100%;
+}
+#fondoGradiente section div form input {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  background: none;
+  border: none;
+  outline: none;
+  padding-left: 20px;
+  font-size: 16px;
+}
+#fondoGradiente section div form button {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 20px;
+}
+#fondoGradiente section div form button:hover {
+  background-color: gainsboro;
+}
+#fondoGradiente section div p {
+  margin: 0 auto;
+  font-size: 24px;
+}
+#fondoGradiente section div > input {
+  width: 50%;
+  margin: 0 auto;
+}
+#fondoGradiente section .boton_secundario {
+  background-color: #08232C;
+  color: white;
+  padding: 10px 0px;
+  text-transform: uppercase;
+  border-radius: 10px;
+  font-family: "Merriweather";
+}/*# sourceMappingURL=animated-search.component.css.map */

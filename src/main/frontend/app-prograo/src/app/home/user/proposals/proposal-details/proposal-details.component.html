@@ -1,0 +1,33 @@
+<div *ngIf="proposal; then modalReady; else modalWait" ></div>
+
+<ng-template #modalWait>
+  <p>Cargando...</p>
+</ng-template>
+
+<ng-template #modalReady>
+  <section class="seeker-information">
+    <img class="profile-photo" [src]="'assets/' + proposal.seekerProfilePhoto">
+    <div class="seeker-info">
+      <h4>{{proposal.seekerName}}</h4>
+      <p>{{proposal.seekerTitle}}</p>
+      <shared-location [city]="proposal.seekerCity" [country]="proposal.seekerCountry" [fontSizeIcon]="20" [fontSizeP]="14"></shared-location>
+    </div>
+  </section>
+  <section class="proposal-info">
+    <h3>{{proposal.proposalTitle}}</h3>
+    <p>{{proposal.proposalDescription}}</p>
+    <p class="date">
+      {{ proposal.proposalSendDate ? proposal.proposalSendDate.getDate() : '' }}
+      / {{ proposal.proposalSendDate ? proposal.proposalSendDate.getMonth()+1 : '' }}
+      / {{ proposal.proposalSendDate ? proposal.proposalSendDate.getFullYear() : '' }}
+    </p>
+  </section>
+  <section class="proposal-footer">
+    <p><b>Tiempo estimado: </b>{{proposal.proposalEstimatedTime}}</p>
+    <p *ngIf="proposal.proposalWorkStyle == 'remoteWork'"><b>Estilo de trabajo: </b>Teletrabajo</p>
+    <p *ngIf="proposal.proposalWorkStyle == 'inPersonWork'"><b>Estilo de trabajo: </b>Presencial</p>
+    <p *ngIf="proposal.proposalWorkStyle == 'hybridWork'"><b>Estilo de trabajo: </b>Híbrido</p>
+    <p *ngIf="proposal.proposalWorkStyle == 'undefined'"><b>Estilo de trabajo: </b>Sin determinar</p>
+  </section>
+</ng-template>
+

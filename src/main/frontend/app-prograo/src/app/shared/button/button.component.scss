@@ -1,0 +1,66 @@
+@import '../../../sass/mixins';
+@import '../../../sass/variables';
+
+input {
+  align-items: center;
+  background-clip: padding-box;
+  border: 1px solid transparent;
+  border-radius: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-flex;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+    transform: translateY(0);
+  }
+
+  &:hover, &:focus {
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  }
+
+}
+
+.primary {
+  background-image: radial-gradient(circle at center, $primary, $primary-dark);
+  color: #000;
+
+  &:hover {
+    background-color: $primary-hover;
+  }
+}
+
+.secondary {
+  background-color: $secondary;
+  color: #fff;
+
+  &:hover {
+    background-color: $secondary-hover;
+  }
+}
+
+.green {
+  background-color: #559E55;
+  color: #000;
+
+  &:hover {
+    background-color: #498549;
+  }
+}

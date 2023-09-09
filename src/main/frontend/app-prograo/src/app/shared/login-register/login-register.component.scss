@@ -1,0 +1,54 @@
+@import '../../../sass/mixins';
+@import '../../../sass/variables';
+
+.loginRegisterHeader {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 10px;
+
+  p {
+    text-align: center;
+    border: 2px solid white;
+    border-bottom: 2px solid lightgray;
+    font-family: $font-family-title;
+    cursor: pointer;
+    transition: 0.2s;
+    padding: 10px 0px 10px 0px;
+
+    &:hover {
+      border: 2px solid $primary;
+    }
+  }
+
+}
+
+.loginRegisterMain {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 10px 0px;
+
+  p {
+    background-color: #f63d68;
+    padding: 5px;
+    text-align: center;
+    color: white;
+    margin-top: 10px;
+  }
+
+}
+
+shared-select {
+  margin-top: 10px;
+}
+
+shared-button, shared-input {
+  margin-top: 10px;
+}
+
+.selected {
+  border-bottom: 2px solid $primary-dark !important;
+  background: linear-gradient(to top, $primary, white 110%);
+}

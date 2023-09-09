@@ -1,0 +1,37 @@
+@charset "UTF-8";
+/* COLORES */
+/* TAMAÑOS */
+/* FUENTES */
+main {
+  padding-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  align-items: flex-start;
+}
+main .filters {
+  display: none;
+}
+@media only screen and (min-width: 768px) {
+  main .filters {
+    display: block;
+    grid-column: 1;
+    margin-right: 10px;
+  }
+}
+main .freelancers-list {
+  grid-column-start: 1;
+  grid-column-end: 7;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+}
+@media only screen and (min-width: 768px) {
+  main .freelancers-list {
+    grid-column-start: 2;
+  }
+}
+@media only screen and (min-width: 1100px) {
+  main .freelancers-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}/*# sourceMappingURL=freelancers-list.component.css.map */

@@ -1,0 +1,47 @@
+@charset "UTF-8";
+/* COLORES */
+/* TAMAÑOS */
+/* FUENTES */
+.seeker-information {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  border-bottom: 2px solid lightgray;
+  padding-bottom: 10px;
+}
+.seeker-information .profile-photo {
+  width: 70px;
+  border-radius: 100%;
+  margin-right: 10px;
+}
+.seeker-information .seeker-info p {
+  font-size: 14px;
+}
+
+.proposal-info {
+  border-bottom: 2px solid lightgray;
+  padding-bottom: 10px;
+}
+.proposal-info h3 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-family: "Merriweather";
+}
+.proposal-info .date {
+  font-size: 14px;
+  color: rgb(88, 88, 88);
+}
+
+.proposal-footer {
+  margin-top: 10px;
+}/*# sourceMappingURL=proposal-details.component.css.map */

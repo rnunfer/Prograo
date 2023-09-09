@@ -1,0 +1,41 @@
+@import '../../../sass/mixins';
+@import '../../../sass/variables';
+
+footer {
+
+    background-color: black;
+    padding: 25px 0px;
+
+    .links-zone {
+
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        border-bottom: 1px solid white;
+        padding-bottom: 25px;
+
+        @include tablet {
+          flex-direction: row;
+          align-items: center;
+        }
+
+        a {
+            color: white;
+
+            @include phone {
+              padding-right: 40px;
+            }
+        }
+
+    }
+
+    .logo-zone {
+
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        color: white;
+        padding-top: 25px;
+
+    }
+}

@@ -1,0 +1,34 @@
+<div *ngIf="proposal; then modalReady; else modalWait" ></div>
+
+<ng-template #modalWait>
+  <p>Cargando...</p>
+</ng-template>
+
+<ng-template #modalReady>
+  <form [formGroup]="formProposal">
+    <section class="seeker-information">
+      <img class="profile-photo" [src]="'assets/' + proposal.seekerProfilePhoto">
+      <div class="seeker-info">
+        <h4>{{proposal.seekerName}}</h4>
+        <p>{{proposal.seekerTitle}}</p>
+        <shared-location [city]="proposal.seekerCity" [country]="proposal.seekerCountry" [fontSizeIcon]="20" [fontSizeP]="14"></shared-location>
+      </div>
+    </section>
+    <section class="proposal-info">
+      <b>Título:</b>
+      <shared-input [conf]="confTitle" (dataEmit)="changeField('proposalTitle')"></shared-input>
+      <b>Descripción:</b>
+      <shared-input [conf]="confDescription" (dataEmit)="changeField('proposalDescription')"></shared-input>
+      <p class="date">
+        {{ proposal.proposalSendDate ? proposal.proposalSendDate.getDate() : '' }}
+        / {{ proposal.proposalSendDate ? proposal.proposalSendDate.getMonth() : '' }}
+        / {{ proposal.proposalSendDate ? proposal.proposalSendDate.getFullYear() : '' }}
+      </p>
+    </section>
+    <section class="proposal-footer">
+      <p><b>Tiempo estimado: </b><shared-input [conf]="confStimatedTime" (dataEmit)="changeField('proposalStimatedTime')"></shared-input></p>
+      <p><b>Estilo de trabajo: </b><shared-select [conf]="confWorkStyleSelect" (dataEmit)="changeField('proposalWorkStyle')"></shared-select></p>
+    </section>
+  </form>
+</ng-template>
+

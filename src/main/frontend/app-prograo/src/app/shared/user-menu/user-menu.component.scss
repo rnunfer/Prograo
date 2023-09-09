@@ -1,0 +1,29 @@
+@import '../../../sass/mixins';
+@import '../../../sass/variables';
+
+ul {
+    list-style: none;
+    text-align: center;
+    height: 100%;
+    background-color: $secondary;
+    border-radius: 10px;
+
+    li {
+        padding: 15px 10px;
+        cursor: pointer;
+        color: white;
+        font-family: $font-family-title;
+        transition: 0.2s;
+        white-space: nowrap;
+        font-weight: lighter;
+
+        &:not(.selected):hover {
+            text-decoration: underline;
+        }
+    }
+
+    .selected {
+      background-color: $primary;
+      cursor: auto;
+    }
+}

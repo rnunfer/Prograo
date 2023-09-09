@@ -1,0 +1,47 @@
+@charset "UTF-8";
+/* COLORES */
+/* TAMAÑOS */
+/* FUENTES */
+.container h1 {
+  margin-top: 50px;
+  margin-bottom: 25px;
+  font-family: "Merriweather";
+  font-size: 40px;
+  font-weight: lighter;
+  text-align: center;
+}
+.container section {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+@media only screen and (min-width: 480px) {
+  .container section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5%;
+  }
+}
+.container section article {
+  text-align: center;
+}
+.container section article div {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+.container section article div i {
+  display: inline;
+  color: #08232C;
+  margin-right: 5px;
+}
+.container section article div h3 {
+  display: inline;
+  color: #FF7F40;
+  font-family: "Merriweather";
+  font-size: 28px;
+  font-weight: lighter;
+  text-align: center;
+}
+.container section article p {
+  font-size: 20px;
+  line-height: 30px;
+}/*# sourceMappingURL=prograo-description.component.css.map */

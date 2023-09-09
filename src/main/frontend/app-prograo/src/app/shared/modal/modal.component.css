@@ -1,0 +1,64 @@
+@charset "UTF-8";
+/* COLORES */
+/* TAMAÑOS */
+/* FUENTES */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 100;
+}
+
+.modalBackground {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(175, 172, 172, 0.6);
+}
+
+.modalBody {
+  z-index: 5;
+  background-color: white;
+  margin-top: 100px;
+  border-radius: 5px;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.modalHeader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #FF7F40;
+  margin-bottom: 20px;
+}
+.modalHeader p {
+  font-size: 20px;
+  font-family: "Merriweather";
+}
+.modalHeader i {
+  font-size: 23px;
+  cursor: pointer;
+}/*# sourceMappingURL=modal.component.css.map */

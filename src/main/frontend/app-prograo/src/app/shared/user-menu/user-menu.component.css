@@ -1,0 +1,28 @@
+@charset "UTF-8";
+/* COLORES */
+/* TAMAÑOS */
+/* FUENTES */
+ul {
+  list-style: none;
+  text-align: center;
+  height: 100%;
+  background-color: #08232C;
+  border-radius: 10px;
+}
+ul li {
+  padding: 15px 10px;
+  cursor: pointer;
+  color: white;
+  font-family: "Merriweather";
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  white-space: nowrap;
+  font-weight: lighter;
+}
+ul li:not(.selected):hover {
+  text-decoration: underline;
+}
+ul .selected {
+  background-color: #FF7F40;
+  cursor: auto;
+}/*# sourceMappingURL=user-menu.component.css.map */

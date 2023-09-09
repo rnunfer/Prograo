@@ -1,0 +1,26 @@
+<div *ngIf="conf.activateFormControl; then withFormControl; else withoutFormControl"></div>
+<ng-template #withFormControl>
+  <section class="wrapper">
+<!--     <i class="fa-solid fa-triangle-exclamation" *ngIf="conf.formControl.invalid && conf.formControl.touched" [ngStyle]="{'font-size.px': conf.fontSize+2}" @fadeIn @fadeOut>
+      <ul *ngIf="conf.formControl.touched && conf.formControl.invalid">
+        <li *ngIf="conf.formControl.hasError('required')" [ngStyle]="{'font-size.px': conf.fontSize-5}">Este campo es obligatorio</li>
+      </ul>
+    </i> -->
+    <select [formControl]="conf.formControl" [ngStyle]="{'font-size.px': conf.fontSize}" (change)="emit()">
+      <option [value]="null" disabled selected>Elija una opción</option>
+      <option *ngFor="let option of conf.options" [value]="option.value" [selected]="option.value === conf.formControl.value">{{ option.label }}</option>
+    </select>
+  </section>
+</ng-template>
+<ng-template #withoutFormControl>
+  <section class="wrapper">
+    <select [formControl]="conf.formControl" [ngStyle]="{'font-size.px': conf.fontSize}" (change)="emit()">
+      <option [value]="null" disabled selected>Elija una opción</option>
+      <option *ngFor="let option of conf.options" [value]="option.value" [selected]="option.value === conf.formControl.value">{{ option.label }}</option>
+    </select>
+  </section>
+</ng-template>
+
+
+
+

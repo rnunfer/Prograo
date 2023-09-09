@@ -1,0 +1,200 @@
+@import '../../../../../sass/mixins';
+@import '../../../../../sass/variables';
+
+#fondoGradiente {
+
+    height: 550px;
+    background: linear-gradient(-45deg, #FF7F40, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 20s ease infinite;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+
+    @keyframes gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    .letrasInicio {
+        overflow: hidden;
+    }
+
+    .letrasInicio p, .letrasInicio img {
+        position: absolute;
+        animation-name: derecha;
+        animation-duration: 3s;
+        animation-delay: 0s;
+        animation-iteration-count: infinite;
+        animation-direction: normal;
+        animation-timing-function: linear;
+        animation-fill-mode: none;
+        font-family: $font-family-title;
+    }
+
+    .letrasInicio p:nth-child(1){
+        animation: animacionJava 9s linear 0s infinite normal;
+    }
+
+
+    .letrasInicio p:nth-child(2){
+        animation: animacionSpring 30s linear 0s infinite normal;
+    }
+
+    .letrasInicio p:nth-child(3){
+        animation: animacionThymeleaf 19s linear 0s infinite normal;
+    }
+
+    .letrasInicio p:nth-child(4){
+        animation: animacionGit 15s linear 0s infinite normal;
+    }
+
+    .letrasInicio img:nth-child(5){
+        animation: animacionOveja 50s linear 0s infinite alternate;
+    }
+
+    .letrasInicio p:nth-child(6){
+        animation: animacionSQL 15s linear 0s infinite normal;
+    }
+
+    .letrasInicio p:nth-child(7){
+        transform: rotate(270deg);
+        animation: animacionLink 30s linear 0s infinite normal;
+    }
+
+    @keyframes animacionJava {
+        0% {top: 33%; left: 0%;}
+        100% {top: 33%; left: 280%;}
+    }
+
+    @keyframes animacionSpring {
+        0% {top: 12%; left: 0%;}
+        100% {top: 12%; left: 123%;}
+    }
+
+    @keyframes animacionThymeleaf {
+        0% {top: -30%; left: 71%;}
+        100% {top: 120%; left: 71%;}
+    }
+
+    @keyframes animacionGit {
+        0% {top: 22%; left: 123%;}
+        100% {top: 22%; left: -5%;}
+    }
+
+    @keyframes animacionOveja {
+        0% {top: 83%; left: -50%; transform: rotate(0deg);}
+        100% {top: 83%; left: 300%; transform: rotate(3600deg);}
+    }
+
+    @keyframes animacionSQL {
+        0% {top: 74%; left: -11%;}
+        100% {top: 74%; left: 450%;}
+    }
+
+    @keyframes animacionLink {
+        0% {top: 248%; left: 8%;}
+        100% {top: -200%; left: 8%;}
+    }
+
+    section {
+
+        z-index: 5;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0%;
+            left: -50%; /* Adjust the left value to control the width of the inclined background */
+            width: 90%; /* Set the width to three times the section width to cover one-third */
+            height: 100%;
+            background: rgba(255, 255, 255, 0.5);
+            transform: skewX(30deg);
+            transform-origin: top left;
+            z-index: -1;
+        }
+
+        h1 {
+           @include h1;
+           width: 45%;
+           text-align: left;
+        }
+
+        div {
+
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+          width: 100%;
+
+          @include phone() {
+            width: 40%;
+          }
+
+          form {
+
+            display: grid;
+            grid-template-columns: 1fr auto;
+            background-color: white;
+            border-radius: 20px;
+            width: 100%;
+
+            input {
+              flex-basis: 50%;
+              background: none;
+              border: none;
+              outline: none;
+              padding-left: 20px;
+              font-size: 16px;
+            }
+
+            button {
+              background: none;
+              border: none;
+              outline: none;
+              cursor: pointer;
+              padding: 10px 20px;
+              border-radius: 20px;
+              font-size: 20px;
+
+              &:hover {
+                background-color: gainsboro;
+              }
+            }
+          }
+
+          p {
+            margin: 0 auto;
+            font-size: 24px;
+          }
+
+          & > input {
+            width: 50%;
+            margin: 0 auto;
+          }
+        }
+
+        .boton_secundario {
+            background-color: $secondary;
+            color: white;
+            padding: 10px 0px;
+            text-transform: uppercase;
+            border-radius: 10px;
+            font-family: $font-family-title;
+        }
+
+    }
+}

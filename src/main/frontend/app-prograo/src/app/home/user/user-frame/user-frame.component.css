@@ -1,0 +1,29 @@
+@charset "UTF-8";
+/* COLORES */
+/* TAMAÑOS */
+/* FUENTES */
+main {
+  padding-top: 20px;
+}
+@media only screen and (min-width: 768px) {
+  main {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+main .app-user-freelancer-menu {
+  display: none;
+  min-height: 80vh;
+}
+@media only screen and (min-width: 768px) {
+  main .app-user-freelancer-menu {
+    display: block;
+    grid-column: 1/2;
+  }
+}
+@media only screen and (min-width: 768px) {
+  main .user-freelancer-content {
+    grid-column: 2/9;
+    margin-left: 10px;
+  }
+}/*# sourceMappingURL=user-frame.component.css.map */

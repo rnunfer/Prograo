@@ -1,0 +1,112 @@
+@charset "UTF-8";
+/* COLORES */
+/* TAMAÑOS */
+/* FUENTES */
+#searchBar {
+  background-color: #08232C;
+  padding: 4px 0px 10px 0px;
+  position: sticky;
+  z-index: 70;
+  top: 0%;
+  display: none;
+}
+@media only screen and (min-width: 768px) {
+  #searchBar {
+    display: block;
+  }
+}
+#searchBar .container .breadcrumb {
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  list-style: none;
+  font-size: 14px;
+}
+#searchBar .container .breadcrumb .breadcrumb-item {
+  text-decoration: underline;
+  cursor: pointer;
+}
+#searchBar .container .breadcrumb .breadcrumb-separator {
+  margin: 0 10px;
+}
+#searchBar .container .breadcrumb :last-child {
+  text-decoration: none;
+  cursor: auto;
+}
+#searchBar .container .bar {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 3px;
+}
+#searchBar .container .bar form {
+  grid-column: 1;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  background-color: white;
+  border-radius: 10px;
+}
+#searchBar .container .bar form input {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  background: none;
+  border: none;
+  outline: none;
+  padding-left: 20px;
+  font-size: 16px;
+}
+#searchBar .container .bar form button {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 20px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+#searchBar .container .bar form button:hover {
+  background-color: gainsboro;
+}
+#searchBar .container .bar p {
+  grid-column: 2;
+  margin: 0 auto;
+  font-size: 24px;
+  color: white;
+  margin: 0 20px;
+}
+#searchBar .container .bar > div {
+  grid-column: 3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+#searchBar .container .bar > div .button-primary {
+  background-color: #FF7F40;
+  border-radius: 10px;
+  padding: 10px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: black;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+#searchBar .container .bar > div .button-primary:hover {
+  background-color: #f1702f;
+}
+#searchBar .container .bar > div input + input {
+  margin-left: 5px;
+}/*# sourceMappingURL=search-bar.component.css.map */

@@ -1,0 +1,77 @@
+<section class="user-edit-wrapper">
+    <div *ngIf="!user; else formUserTemplate">
+        Cargando...
+    </div>
+    <ng-template #formUserTemplate>
+        <section class="section-wrapper">
+            <section class="form-title">
+                <h2>Estado de la cuenta</h2>
+            </section>
+            <div>
+                <h3>VERIFICADO:</h3>
+                <p *ngIf="user.verified == true"> Sí</p>
+                <p *ngIf="user.verified == false"> No</p>
+            </div>
+<!--             <p>Una cuenta verificada es aquella que, tras usar los servicios que Prograo ofrece en diversas ocasiones, ha demostrado ser de confianza. Por tanto, estar verificado te destaca sobre el resto de usuarios permitiendo que haya más probabilidades de que los freelancers te cojan tu propuesta (en el caso de ser un contratador) o que los contratadores te elijan entre el resto de freelancers (si eres uno de ellos)</p>
+ -->            
+            <section class="good-status-section" *ngIf="user.status == 'active'">
+                <h2>CUENTA ACTIVA</h2>
+                <p>Una cuenta <b>activa</b> es aquella que puede usar todos los servicios que ofrece Prograo sin ninguna limitación</p>
+            </section>
+            
+            <section class="bad-status-section" *ngIf="user.status == 'inactive'">
+                <h2>CUENTA INACTIVA</h2>
+                <p>Una cuenta <b>inactiva</b> es aquella a la cual le falta información por añadir. Una vez todos los campos hayan sidos llenados con datos correctos, la cuenta se activará automáticamente. En este estado el usuario disponde ciertas limitaciones en algunas de las páginas</p>
+                <p *ngIf="user.userType == 'freelancer'">Debe tener al menos una habilidad destacada para que se active la cuenta</p>
+            </section>
+    
+            <section class="bad-status-section" *ngIf="user.status == 'suspended'">
+                <h2>CUENTA SUSPENDIDA</h2>
+                <p>Una cuenta <b>suspendida</b> es aquella que ha roto las normas o valores de Prograo, y por ello se le ha denegado temporalmente o indefinidamente el uso de los servicios de Prograo</p>
+            </section>
+        </section>
+
+        <form class="form-wrapper" [formGroup]="formUser">
+            <section class="form-title">
+                <h2>Datos personales</h2>
+            </section>
+            
+            <div class="formulary-element">
+                <label for="profile-photo">Foto de Perfil:</label>
+                <div>
+                    <img class="profile-photo" [src]="'assets/' + user.profilePhoto">
+                    <input type="file" id="profilePhoto" accept="image/png,image/jpeg" (change)="changeProfilePhoto($event)">
+                </div>
+            </div>
+
+            <div class="formulary-element">
+                <label for="name">Nombre:</label>
+                <shared-input [conf]="confName" (dataEmit)="changeField('name')"></shared-input>
+            </div>
+
+            <div class="formulary-element">
+                <label for="title">Título:</label>
+                <shared-input [conf]="confTitle" (dataEmit)="changeField('title')"></shared-input>
+            </div>
+
+            <div class="formulary-element">
+                <label>Localización:</label>
+                <shared-location *ngIf="user.city != null" [city]="formUser.controls['city'].value" [country]="formUser.controls['country'].value" [fontSizeIcon]="18" [fontSizeP]="15"></shared-location>
+                <shared-location *ngIf="user.city == null" [city]="'sin definir'" [country]="'sin definir'" [fontSizeIcon]="18" [fontSizeP]="15"></shared-location>
+                <form class="localization-searcher" [formGroup]="formLocations" class="location-form">
+                    <input type="text" formControlName="filterSearch" (ngModelChange)="searchDataLocation($event)">
+                    <section class="localization-options" *ngIf="formLocations.controls['filterSearch'].value != '' && filteredLocationList.length != 0">
+                        <ul>
+                            <li *ngFor="let location of filteredLocationList" (click)="changeLocation(location)" @fadeIn @fadeOut><shared-location [city]="location.city" [country]="location.country" [fontSizeIcon]="15" [fontSizeP]="12"></shared-location></li>
+                        </ul>
+                    </section>
+                </form>
+            </div>
+
+        </form>
+        <section *ngIf="user.userType == 'freelancer'">
+            <app-user-edit-freelancer></app-user-edit-freelancer>
+            <app-user-edit-skills></app-user-edit-skills>
+        </section>
+    </ng-template>
+</section>

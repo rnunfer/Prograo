@@ -1,0 +1,76 @@
+<section class="user-proposal-wrapper">
+  <section class="user-proposal-list">
+    <shared-dropdown [conf]="conf1">
+      <div class="proposal-box" *ngFor="let project of projectList; index as i" [routerLink]="[project.projectId]">
+        <div>
+          <h3 *ngIf="userType == 'freelancer'">{{project.userSeekerName}}</h3>
+          <h3 *ngIf="userType == 'seeker'">{{project.userFreelancerName}}</h3>
+          <h3 *ngIf="userType == 'administrator'">{{project.userSeekerName}} -> {{project.userFreelancerName}}</h3>
+          <div>
+            <p>{{ project.projectTitle }}</p>
+          </div>
+        </div>
+        <section>
+          <div class="optionsStatus">
+            <p class="date">
+              {{ project.projectSendDate ? project.projectSendDate.getDate() : '' }}
+              / {{ project.projectSendDate ? project.projectSendDate.getMonth()+1 : '' }}
+              / {{ project.projectSendDate ? project.projectSendDate.getFullYear() : '' }}
+            </p>
+          </div>
+        </section>
+      </div>
+      <p *ngIf="projectList.length == 0">Aún no existen proyectos en curso</p>
+    </shared-dropdown>
+
+    <shared-dropdown [conf]="conf2">
+      <div class="proposal-box" *ngFor="let project of preProjectList; index as i" [routerLink]="[project.projectId]">
+        <div>
+          <h3 *ngIf="userType == 'freelancer'">{{project.userSeekerName}}</h3>
+          <h3 *ngIf="userType == 'seeker'">{{project.userFreelancerName}}</h3>
+          <h3 *ngIf="userType == 'administrator'">{{project.userSeekerName}} -> {{project.userFreelancerName}}</h3>
+          <div>
+            <p>{{ project.projectTitle }}</p>
+          </div>
+        </div>
+        <section>
+          <div class="optionsStatus">
+            <p class="date">
+              {{ project.projectSendDate ? project.projectSendDate.getDate() : '' }}
+              / {{ project.projectSendDate ? project.projectSendDate.getMonth()+1 : '' }}
+              / {{ project.projectSendDate ? project.projectSendDate.getFullYear() : '' }}
+            </p>
+          </div>
+        </section>
+      </div>
+      <p *ngIf="preProjectList.length == 0">Aún no existen proyectos en preproducción</p>
+    </shared-dropdown>
+
+    <shared-dropdown [conf]="conf3">
+      <div class="proposal-box" *ngFor="let project of finishedProjectList; index as i" [routerLink]="[project.projectId]">
+        <div>
+          <h3 *ngIf="userType == 'freelancer'">{{project.userSeekerName}}</h3>
+          <h3 *ngIf="userType == 'seeker'">{{project.userFreelancerName}}</h3>
+          <h3 *ngIf="userType == 'administrator'">{{project.userSeekerName}} -> {{project.userFreelancerName}}</h3>
+          <div>
+            <p>{{ project.projectTitle }}</p>
+          </div>
+        </div>
+        <section>
+          <div class="optionsStatus">
+            <p class="date">
+              {{ project.projectStartDate ? project.projectStartDate.getDate() : '' }}
+              / {{ project.projectStartDate ? project.projectStartDate.getMonth()+1 : '' }}
+              / {{ project.projectStartDate ? project.projectStartDate.getFullYear() : '' }}
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              {{ project.projectFinishDate ? project.projectFinishDate.getDate() : '' }}
+              / {{ project.projectFinishDate ? project.projectFinishDate.getMonth()+1 : '' }}
+              / {{ project.projectFinishDate ? project.projectFinishDate.getFullYear() : '' }}
+            </p>
+          </div>
+        </section>
+      </div>
+      <p *ngIf="finishedProjectList.length == 0">Aún no existen proyectos finalizados</p>
+    </shared-dropdown>
+  </section>
+</section>

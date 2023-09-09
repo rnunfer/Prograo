@@ -1,0 +1,7 @@
+.mat-mdc-slide-toggle.modify .mdc-switch .mdc-switch__ripple {
+  height: 0px;
+}
+
+.mat-mdc-slide-toggle.modify .mdc-form-field > label {
+  font-size: 14px;
+}/*# sourceMappingURL=slide-toggle.css.map */

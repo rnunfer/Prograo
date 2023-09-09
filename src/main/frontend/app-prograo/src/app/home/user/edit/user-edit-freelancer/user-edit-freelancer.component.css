@@ -1,0 +1,221 @@
+@charset "UTF-8";
+/* COLORES */
+/* TAMAÑOS */
+/* FUENTES */
+.form-wrapper {
+  background-color: white;
+  border-radius: 10px;
+  padding: 5px;
+  margin-top: 25px;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.form-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  border-bottom: 2px solid lightgrey;
+  padding-bottom: 10px;
+}
+.form-title h2 {
+  font-family: "Merriweather";
+}
+.form-title input[type=button] {
+  background-color: #08232C;
+  border-radius: 10px;
+  padding: 10px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: white;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+.form-title input[type=button]:hover {
+  background-color: #0c2831;
+}
+
+.formulary-element {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 15px;
+}
+.formulary-element div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.formulary-element div .profile-photo {
+  width: 250px;
+  border-radius: 100%;
+  margin-top: 5px;
+}
+.formulary-element div input[type=file] {
+  margin-left: 15px;
+}
+.formulary-element label {
+  font-size: 20px;
+  font-family: "Merriweather";
+}
+.formulary-element input[type=text] {
+  width: 50%;
+  border-radius: 10px;
+  padding: 10px 5px;
+}
+.formulary-element textarea {
+  border-radius: 10px;
+  padding: 10px 5px;
+  resize: none;
+  border: 1px solid black;
+}
+.formulary-element ul {
+  margin-left: 50px;
+}
+.formulary-element ul li {
+  color: red;
+  font-size: 15px;
+}
+.formulary-element .location-form {
+  position: relative;
+}
+.formulary-element .location-form input {
+  margin-top: 10px;
+}
+.formulary-element .location-form section {
+  position: absolute;
+  top: 100%;
+  left: 0%;
+  max-height: 300px;
+  overflow-y: auto;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: column;
+      -ms-flex: column;
+          flex: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.formulary-element .location-form section ul {
+  list-style-type: none;
+  background-color: white;
+  padding: 5px;
+}
+.formulary-element .location-form section ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: rgb(240, 238, 238);
+  margin-bottom: 5px;
+  cursor: pointer;
+  color: black;
+}
+.formulary-element .location-form section ul li:hover {
+  background-color: rgb(190, 187, 187);
+}
+
+.formSkillsMain {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-top: 15px;
+}
+.formSkillsMain input[type=text] {
+  border-radius: 10px;
+  padding: 10px 5px;
+  margin-bottom: 10px;
+  width: 300px;
+}
+.formSkillsMain ul {
+  list-style-type: none;
+}
+.formSkillsMain ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: rgb(240, 238, 238);
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+.formSkillsMain ul li:hover {
+  background-color: rgb(190, 187, 187);
+}
+.formSkillsMain .allSkills {
+  margin-right: 20px;
+  width: 300px;
+}
+.formSkillsMain .allSkills ul {
+  max-height: 400px;
+  overflow-y: auto;
+}
+.formSkillsMain .mySkills {
+  margin-top: 50px;
+}
+.formSkillsMain .mySkills ul {
+  display: grid;
+  grid-template-columns: 300px 300px;
+  grid-gap: 5px;
+}
+.formSkillsMain .mySkills .fa-solid.fa-xmark {
+  margin-left: 10px;
+}/*# sourceMappingURL=user-edit-freelancer.component.css.map */

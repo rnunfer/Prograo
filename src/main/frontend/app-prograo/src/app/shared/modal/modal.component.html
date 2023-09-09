@@ -1,0 +1,12 @@
+<section class="modal" *ngIf="showModal" @fadeIn @fadeOut>
+    <div (click)="hide()" class="modalBackground"></div>
+    <section class="modalBody" [ngStyle]="applyConfiguration()">
+        <section class="modalHeader">
+            <p>{{modalConfiguration.name}}</p>
+            <i class="fa-solid fa-xmark" (click)="hide()"></i>
+        </section>
+        <section class="modalMain">
+            <ng-content></ng-content>
+        </section>
+    </section>  
+</section>
